@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LAB 02</title>
+    
+    <script> 
+        
+        function  noName(){
+            let name = "";
+            let thing = "";
+            if (document.getElementById("box").value == ""){
+                alert("Please Enter Name");
+            }
+            else{
+                name = document.getElementById("box").value;
+
+                for (var radio of  document.getElementsByName('thg'))
+                {
+                    if (radio.checked) {
+                        thing = radio.value;
+                    }
+                }
+
+                let ans = name + " has a " + thing;
+                document.getElementById("hello").value = ans; 
+            }
+        }
+        
+
+    </script>
+</head>
+<body>
+    <!-- <form> -->
+        
+        <input id="hello" type="text"></br></br>
+
+        <input type="radio" id="bike" name="thg" value="bike">
+            <label for="bike">I have a Bike.</label><br>
+
+        <input type="radio" id="car" name="thg" value="car">
+            <label for="car">I have a Car.</label><br>
+
+        <input type="radio" id="boat" name="thg" value="boat">
+            <label for="boat">I have a Boat.</label><br><br>
+        
+            <label for="box">Name:</label>
+        <input id="box" type="text"> 
+
+        <input type="submit"  id="btn" onClick="noName()">
+
+
+    <!-- </form> -->
+</body>
+</html>
