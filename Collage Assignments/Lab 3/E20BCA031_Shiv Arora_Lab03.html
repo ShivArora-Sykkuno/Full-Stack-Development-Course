@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LAB 02</title>
+    
+    <script> 
+        
+        function  noName(){
+            let name = "";
+            let thing = "";
+            if (document.getElementById("box").value == ""){
+                alert("Please Enter Name");
+            }
+            else{
+                name = document.getElementById("box").value;
+
+                for (var radio of  document.getElementsByName('thg'))
+                {
+                    if (radio.checked) {
+                        thing = radio.value;
+                    }
+                }
+
+                let ans = name + " has a " + thing;
+                document.getElementById("hello").value = ans; 
+            }
+        }
+
+
+
+        function red(r) {
+              r.style.background = "red";
+            }
+
+            function uppercase() {
+                var x = document.getElementById("name");
+                x.value = x.value.toUpperCase();
+            }
+
+            function empty(){
+                alert("Using the Alert Function")
+                
+            }
+            s
+            function mousedn() {
+              document.getElementById("para").style.color = "blue";
+            }
+            
+            function bigImg(x) {
+                x.style.height = "90px";
+                x.style.width = "90px";
+            }
+
+            function normalImg(x) {
+                x.style.height = "60px";
+                x.style.width = "60px";
+            }
+
+            
+            function select() {
+                var x = document.getElementById("stars").value;
+                document.getElementById("print").innerHTML = "You selected: " + x;
+            }
+        
+
+    </script>
+</head>
+<body>
+
+        
+        <input id="hello" type="text"></br></br>
+
+        <input type="radio" id="bike" name="thg" value="bike">
+            <label for="bike">I have a Bike.</label><br>
+
+        <input type="radio" id="car" name="thg" value="car">
+            <label for="car">I have a Car.</label><br>
+
+        <input type="radio" id="boat" name="thg" value="boat">
+            <label for="boat">I have a Boat.</label><br><br>
+        
+            <label for="box">Name:</label>
+        <input id="box" type="text"> 
+
+        <input type="submit"  id="btn" onClick="noName()">
+
+
+        <br> <br><br>
+
+
+
+        <form>
+            <label for="name">Enter your name:</label> 
+            <input type="text" id="name" onfocus="red(this)" onblur="uppercase()">
+            <br> <br><br>
+
+            <input type="submit"  onclick="empty()">
+        </form>
+
+        <br><br><br>
+        <p id="para" onmousedown="mousedn()"> Text will change to blue</p>
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)"src="imgg.jpg" alt="owl" width="60" height="60">
+
+
+        <br> <br><br>
+
+        <select id="stars" onchange="select()">
+            <option value="Sunny">Sunny</option>
+            <option value="Lana">Lana</option>
+            <option value="Ava">Ava</option>
+            <option value="Alexandra">Alexandra</option>
+          </select>
+          
+          
+          <p id="print"></p>
+
+
+          <br> <br><br>
+</body>
+</html>
